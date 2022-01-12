@@ -2,6 +2,23 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center text-light display-4">
-    <h1>Hello in my portfolio !</h1>
+<div class="full_size text-center d-flex flex-column justify-content-center align-items-center text-light">
+    <h1 class="display-6" >Hello World !</h1>
+    <h2 class="display-5 fw-bold">I am computer science student </h2>
+    <div class="text-center w-50">
+    <p class="font-monospace mt-3 fs-5">
+        My name is Arkadiusz Stasko, 
+        i am developing my skills into .NET technology, 
+        i also learning c++ for my hobby
+    </p>
+    </div>    
+    <i class="bi bi-pc-display display-2" style="color:#5571f5"></i>
+    <div class="mt-4">
+    <a class="btn btn-outline-light" asp-area="" asp-controller="Projects" asp-action="Index">
+        See Projects
+    </a>
+    <a class="btn btn-outline-light" asp-area="" asp-controller="Home" asp-action="AboutMe">
+        See About me
+    </a>
+    </div>
 </div>

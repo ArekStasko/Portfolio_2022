@@ -13,10 +13,10 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+.main_blue {
+    background-color: #5571f5;
 }
 
-.tile {
-    background-color: #557ef5;
+.full_size{
+    height: 100vh;
 }
