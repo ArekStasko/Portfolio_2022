@@ -2,7 +2,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="full_size text-center d-flex flex-column justify-content-center align-items-center text-light">
+<div class="home_container bg-dark d-flex justify-content-center align-items-center">
+    <div class="home_background">
+        <video class="home_video-background" autoplay muted loop>
+            <source 
+            src="https://res.cloudinary.com/daidpbgul/video/upload/v1642004663/home-video_ua4j6t.webm" 
+            type="video/webm" 
+            />
+        </video>
+    </div>
+    <div class="text-center d-flex flex-column justify-content-center align-items-center text-light">
     <h1 class="display-6" >Hello World !</h1>
     <h2 class="display-5 fw-bold">I am computer science student </h2>
     <div class="text-center w-50">
@@ -20,5 +29,6 @@
     <a class="btn btn-outline-light" asp-area="" asp-controller="Home" asp-action="AboutMe">
         See About me
     </a>
+    </div>
     </div>
 </div>
