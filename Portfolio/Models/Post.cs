@@ -6,8 +6,7 @@ namespace Portfolio.Models
     public class Post
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string ID { get; set; }
+        public Guid Id { get; set; }
 
         [BsonElement("Name")]
         public string Title { get; set; }
