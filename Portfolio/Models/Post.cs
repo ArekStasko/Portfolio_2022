@@ -6,14 +6,14 @@ namespace Portfolio.Models
     public class Post
     {
         [BsonId]
-        public Guid Id { get; set; }
+        public Guid _id { get; set; }
 
         [BsonElement("Name")]
-        public string Title { get; set; }
-        public string SummaryDescription { get; set; }
-        public string Description { get; set; }
-        public string PhotoLink { get; set; }
-        public string VideoLink { get; set; }
+        public string Title { get; set; } = "None";
+        public string SummaryDescription { get; set; } = "None Description";
+        public string Description { get; set; } = "None Description";
+        public string PhotoLink { get; set; } = String.Empty;
+        public string VideoLink { get; set; } = String.Empty;
 
     }
 }
