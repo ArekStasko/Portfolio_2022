@@ -22,7 +22,7 @@
                     <div class="card-body">
                         <h5 class="card-title">@post.Title</h5>
                         <p class="card-text">@post.Description</p>
-                        <a href="#" class="btn btn-primary">Details</a>
+                        <a asp-action="Details" asp-route-id="@post._id" class="btn btn-primary">Details</a>
                     </div>
                 </div>           
                }

@@ -1,0 +1,16 @@
+﻿@model Post
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container-fluid bg-black text-light">
+    <img src="@Model.PhotoLink" alt="Project_Photo">
+    <h1>@Model.Title</h1>
+    <h3>@Model.SummaryDescription</h3>
+    <p>@Model.Description</p>
+    <form>
+        <input type="hidden" asp-for="_id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+</div>

@@ -17,7 +17,7 @@ namespace Portfolio.Controllers
 
         public IActionResult Index()
         {
-            var data = _service.GetPosts<Post>("Posts");
+            var data = _service.GetPosts("Posts");
             return View(data);
         }
 
@@ -36,5 +36,21 @@ namespace Portfolio.Controllers
             _service.InsertPost("Posts", examplePost);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult Details(Guid id)
+        {
+            var post = _service.GetPostByID("Posts", id);
+            if (post == null) return View("Error");
+            return View(post);
+        }
+
+        [HttpDelete]
+        public ActionResult Delete(Guid id)
+        {
+            _service.DeletePost("Posts", id);
+            return RedirectToAction("Index");
+        }
+
     }
 }
