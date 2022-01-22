@@ -45,10 +45,14 @@ namespace Portfolio.Controllers
             return View(post);
         }
 
-        [HttpDelete]
-        public ActionResult Delete(Guid id)
+        [HttpPost]
+        public ActionResult Delete(Guid _id)
         {
-            _service.DeletePost("Posts", id);
+            Console.WriteLine(_id);
+            var post = _service.GetPostByID("Posts", _id);
+            if (post == null) return View("Error");
+           
+            _service.DeletePost("Posts", _id);
             return RedirectToAction("Index");
         }
 

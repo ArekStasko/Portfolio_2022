@@ -36,7 +36,9 @@ namespace Portfolio.Data.services
         public void DeletePost(string table, Guid Id)
         {
             var collection = _database.GetCollection<Post>(table);
-            collection.DeleteOne(x => x._id.CompareTo(Id) == 0);
+            var filter = Builders<Post>.Filter.Eq("_id", Id);
+
+            collection.DeleteOne(filter);
         }
     }
 }
