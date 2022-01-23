@@ -20,20 +20,17 @@ namespace Portfolio.Controllers
             var data = _service.GetPosts("Posts");
             return View(data);
         }
+        public ActionResult CreatePost()
+        {
+            return View();
+        }
 
         [HttpPost]
-        public ActionResult Create()
+        public ActionResult Create([Bind("Title", "GithubLink", "SummaryDescription",
+            "PhotoLink", "VideoLink", "Description")]Post post)
         {
-            var examplePost = new Post()
-            {
-                Title = "ExamplePost2",
-                SummaryDescription = "This is example post",
-                Description = "This is example post This is example post This is example post",
-                PhotoLink = "https://static.wirtualnemedia.pl/media/top/gd-robot655.jpg",
-                VideoLink = "None"
-            };
 
-            _service.InsertPost("Posts", examplePost);
+            _service.InsertPost("Posts", post);
             return RedirectToAction("Index");
         }
 
