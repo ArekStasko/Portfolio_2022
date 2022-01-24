@@ -20,6 +20,22 @@ namespace Portfolio.Controllers
             var data = _service.GetPosts("Posts");
             return View(data);
         }
+
+        public ActionResult UpdatePost(Guid id)
+        {
+            var post = _service.GetPostByID("Posts", id);
+            if (post == null) return View("Error");
+            return View(post);
+        }
+
+        [HttpPost]
+        public ActionResult Update([Bind("_id", "Title", "GithubLink", "SummaryDescription",
+            "PhotoLink", "VideoLink", "Description")]Post post)
+        {
+            _service.UpdatePost("Posts", post);
+            return RedirectToAction("Index");
+        }
+
         public ActionResult CreatePost()
         {
             return View();
@@ -45,7 +61,6 @@ namespace Portfolio.Controllers
         [HttpPost]
         public ActionResult Delete(Guid _id)
         {
-            Console.WriteLine(_id);
             var post = _service.GetPostByID("Posts", _id);
             if (post == null) return View("Error");
            

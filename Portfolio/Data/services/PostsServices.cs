@@ -19,6 +19,13 @@ namespace Portfolio.Data.services
             collection.InsertOne(post);
         }
 
+        public void UpdatePost(string table, Post post)
+        {
+            var collection = _database.GetCollection<Post>(table);
+            var filter = Builders<Post>.Filter.Eq("_id", post._id);
+            var result = collection.ReplaceOne(filter, post);
+        }
+
         public List<Post> GetPosts(string table)
         {
             var collection = _database.GetCollection<Post>(table);

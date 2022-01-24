@@ -9,8 +9,11 @@
     <h1>@Model.Title</h1>
     <h3>@Model.SummaryDescription</h3>
     <p>@Model.Description</p>
+    <div class="d-flex justify-content-evenly">
     <form asp-action="Delete">
         <input type="hidden" asp-for="_id" />
         <input type="submit" value="Delete" class="btn btn-danger" />
     </form>
+    <a asp-action="UpdatePost" asp-route-id="@Model._id" class="btn btn-primary">Update</a>
+    </div>
 </div>
