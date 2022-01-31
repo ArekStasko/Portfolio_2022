@@ -1,5 +1,5 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -9,8 +9,9 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    color: #f0f6fc;
 }
 
 .main_blue {
@@ -23,15 +24,27 @@ html {
     border-bottom: 0;
 }
 
-.home_background {
-    position: absolute;
-    width: 100vw;
-    height: 99vh;
-    z-index: -1;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.home_video-background {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+.text-block{
+    max-width: 50%;
+}
+
+.details-image{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bsc-margin {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.dark_background {
+    background-color: #161b22;
 }

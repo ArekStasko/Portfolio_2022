@@ -3,17 +3,20 @@
 @{
     ViewData["Title"] = Model.Title;
 }
+<div class="text-light bsc-margin center h-100">
 
-<div class="container-fluid bg-black text-light">
-    <img src="@Model.PhotoLink" alt="Project_Photo">
-    <h1>@Model.Title</h1>
-    <h3>@Model.SummaryDescription</h3>
-    <p>@Model.Description</p>
-    <div class="d-flex justify-content-evenly">
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="_id" />
-        <input type="submit" value="Delete" class="btn btn-danger" />
-    </form>
-    <a asp-action="UpdatePost" asp-route-id="@Model._id" class="btn btn-primary">Update</a>
+<div class="d-flex justify-content-between bg-dark p-3">
+  <div class="d-flex align-items-center justify-content-center p-0 w-50 details-image " style="background-image: url(@Model.PhotoLink)">
+</div>
+     <div class="d-flex flex-column justify-content-center bg-dark text-block">
+        <h4 class="card-header">@Model.Title</h4>
+        <div class="d-flex flex-column justify-content-around h-100 p-3">
+          <h5 class="card-title">@Model.SummaryDescription</h5>
+          <p class="card-text">@Model.Description</p>
+          <div class='d-flex justify-content-end align-content-end w-100'>
+            <a href="@Model.GithubLink" class="btn btn-outline-light">Github</a>
+          </div>
+        </div>
     </div>
+  </div>
 </div>

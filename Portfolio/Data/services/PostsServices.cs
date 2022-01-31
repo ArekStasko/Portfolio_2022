@@ -13,19 +13,6 @@ namespace Portfolio.Data.services
             _database = client.GetDatabase(db);
         }
 
-        public void InsertPost(string table, Post post)
-        {
-            var collection = _database.GetCollection<Post>(table);
-            collection.InsertOne(post);
-        }
-
-        public void UpdatePost(string table, Post post)
-        {
-            var collection = _database.GetCollection<Post>(table);
-            var filter = Builders<Post>.Filter.Eq("_id", post._id);
-            var result = collection.ReplaceOne(filter, post);
-        }
-
         public List<Post> GetPosts(string table)
         {
             var collection = _database.GetCollection<Post>(table);
@@ -40,12 +27,5 @@ namespace Portfolio.Data.services
             return collection.Find(filter).First();
         }
 
-        public void DeletePost(string table, Guid Id)
-        {
-            var collection = _database.GetCollection<Post>(table);
-            var filter = Builders<Post>.Filter.Eq("_id", Id);
-
-            collection.DeleteOne(filter);
-        }
     }
 }

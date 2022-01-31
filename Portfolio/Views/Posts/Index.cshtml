@@ -4,8 +4,7 @@
     ViewData["Title"] = "Projects";
 }
 
-<div class='container-fluid text-light' style="margin-top: 70px;">
-    <h2 class="text-center">Here i will show my projects posts</h2>
+<div class='container-fluid text-light bsc-margin' style="margin-top: 70px;">
     <div class="container-fluid d-flex justify-content-evenly flex-wrap">
             @if(Model.Count == 0)
             {
@@ -17,16 +16,15 @@
             {
                @foreach(var post in Model)
                {
-                <div class="card text-black mt-4" style="width: 18rem;">
+                <div class="card border-bottom bg-dark text-light m-4" style="width: 22rem;">
                     <img src="@post.PhotoLink" class="card-img-top" alt="Project_Photo">
                     <div class="card-body">
                         <h5 class="card-title">@post.Title</h5>
-                        <p class="card-text">@post.Description</p>
+                        <p class="card-text">@post.SummaryDescription</p>
                         <a asp-action="Details" asp-route-id="@post._id" class="btn btn-primary">Details</a>
                     </div>
                 </div>           
                }
             }
     </div>
-    <a class="btn btn-success" asp-area="" asp-controller="Posts" asp-action="CreatePost">Create post</a>
 </div>
