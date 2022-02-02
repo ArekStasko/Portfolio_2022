@@ -32,7 +32,7 @@
                             <a class="nav-link text-light fs-5" asp-area="" asp-controller="Posts" asp-action="Index">Posts</a>
                         </li>
                          <li class="nav-item mx-3">
-                            <a class="nav-link text-light fs-5" asp-area="" asp-controller="Home" asp-action="AboutMe">About Me</a>
+                            <a class="nav-link text-light fs-5" asp-area="" asp-controller="AboutMe" asp-action="Index">About Me</a>
                          </li>
                     </ul>
                 </div>
@@ -40,7 +40,7 @@
         </nav>
     </header>
     <div class="center p-5">
-        <main role="main" class="d-flex justify-content-center">
+        <main role="main" class="d-flex justify-content-center h-100">
             @RenderBody()
         </main>
     </div>

@@ -1,0 +1,17 @@
+﻿@model AboutMe
+@{
+    ViewData["Title"] = "AboutMe";
+}
+<div class="text-light bsc-margin full">
+
+<div class="d-flex justify-content-around bg-dark p-3 h-75">
+  <div class="d-flex align-items-center justify-content-center p-0 w-25 details-image " style="background-image: url(https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGhvdG98ZW58MHx8MHx8&w=1000&q=80)"></div>
+     <div class="d-flex flex-column justify-content-center bg-dark text-block">
+        <h4 class="card-header">@Model.Title</h4>
+        <div class="d-flex flex-column justify-content-around w-100 h-100 p-3">
+          <h5 class="card-title">@Model.AboutDescription</h5>
+          <p class="card-text">@Model.AboutSkills</p>
+        </div>
+    </div>
+  </div>
+</div>

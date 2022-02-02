@@ -24,6 +24,10 @@ html {
     border-bottom: 0;
 }
 
+.full {
+    height: 100vh;
+}
+
 .center {
     display: flex;
     justify-content: center;
