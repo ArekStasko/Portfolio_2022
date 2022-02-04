@@ -117,7 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MONGODB_ADRESS" xml:space="preserve">
-    <value>mongodb+srv://Arek:Arek6565@portfolio2022.ngcqa.mongodb.net/myFirstDatabase?retryWrites=true&amp;w=majority</value>
-  </data>
 </root>

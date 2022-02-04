@@ -59,14 +59,5 @@ namespace Portfolio.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to mongodb+srv://Arek:Arek6565@portfolio2022.ngcqa.mongodb.net/myFirstDatabase?retryWrites=true&amp;w=majority.
-        /// </summary>
-        internal static string MONGODB_ADRESS {
-            get {
-                return ResourceManager.GetString("MONGODB_ADRESS", resourceCulture);
-            }
-        }
     }
 }

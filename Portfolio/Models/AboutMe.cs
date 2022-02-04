@@ -12,5 +12,6 @@ namespace Portfolio.Models
         public string Title { get; set; } = "None";
         public string AboutDescription { get; set; } = "None Description";
         public string AboutSkills { get; set; } = "None Description";
+        public string PhotoLink { get; set; }
     }
 }

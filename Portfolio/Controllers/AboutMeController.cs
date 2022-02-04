@@ -7,16 +7,27 @@ namespace Portfolio.Controllers
     {
         private AboutMeServices _service;
 
-        public AboutMeController()
+        private readonly IConfiguration _config;
+
+        public AboutMeController(IConfiguration config)
         {
-            _service = new AboutMeServices("TestPosts");
+            _config = config;
         }
 
         public IActionResult Index()
         {
+            InitializeDB();
             var data = _service.GetAboutMe();
             return View(data);
         }
+        
+        private void InitializeDB()
+        {
+            string mng = _config["API:MNG"];
+            Console.WriteLine(mng);
+            _service = new AboutMeServices(mng);
+        }
+       
 
     }
 }

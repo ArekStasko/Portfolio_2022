@@ -8,15 +8,16 @@ namespace Portfolio.Controllers
     public class PostsController : Controller
     {
         private PostsServices _service;
+        private readonly IConfiguration _config;
 
-        public PostsController()
+        public PostsController(IConfiguration config)
         {
-            //Environment.GetEnvironmentVariable("MONGODB_ADRESS")
-            _service = new PostsServices("TestPosts");
+            _config = config;   
         }
 
         public IActionResult Index()
         {
+            InitializeDB();
             var data = _service.GetPosts("Posts");
             return View(data);
         }
@@ -24,10 +25,17 @@ namespace Portfolio.Controllers
         [HttpGet]
         public ActionResult Details(Guid id)
         {
+            InitializeDB();
             var post = _service.GetPostByID("Posts", id);
             if (post == null) return View("Error");
             return View(post);
         }
 
+        private void InitializeDB()
+        {
+            string mng = _config["API:MNG"];
+            Console.WriteLine(mng);
+            _service = new PostsServices(mng);
+        }
     }
 }

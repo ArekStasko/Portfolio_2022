@@ -9,8 +9,8 @@ namespace Portfolio.Data.services
         private IMongoDatabase _database;
         public AboutMeServices(string db)
         {
-            var client = new MongoClient();
-            _database = client.GetDatabase(db);
+            var client = new MongoClient(db);
+            _database = client.GetDatabase("Portfolio");
         }
 
         public AboutMe GetAboutMe()
