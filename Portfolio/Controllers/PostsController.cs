@@ -34,7 +34,6 @@ namespace Portfolio.Controllers
         private void InitializeDB()
         {
             string mng = _config["API:MNG"];
-            Console.WriteLine(mng);
             _service = new PostsServices(mng);
         }
     }
